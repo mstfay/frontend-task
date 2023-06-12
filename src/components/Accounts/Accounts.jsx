@@ -5,8 +5,6 @@ import { PlusOutlined, SearchOutlined, FilterFilled } from "@ant-design/icons";
 import initialData from "./initialData";
 import "./style.css";
 
-const { Search } = Input;
-
 const columns = [
   {
     title: "Sosyal Medya Linki",
