@@ -1,18 +1,33 @@
-.table-container {
-  margin: 0px 27px 31px 29px;
-  background: linear-gradient(
-    180deg,
-    #eff2ff -30.56%,
-    rgba(232, 236, 255, 0) 135.85%
-  );
-  border-radius: 6px;
-  padding: 50px 73px 0px 79px;
-  height: 85vh;
+@media (min-width: 767px) {
+  .table-container {
+    margin: 0px 27px 31px 29px;
+    background: linear-gradient(
+      180deg,
+      #eff2ff -30.56%,
+      rgba(232, 236, 255, 0) 135.85%
+    );
+    border-radius: 6px;
+    padding: 50px 73px 0px 79px;
+    height: 85vh;
+  }
+
+  .custom-search {
+    width: 380px;
+    height: 42px;
+  }
 }
 
-.custom-search {
-  width: 380px;
-  height: 42px;
+@media (max-width: 767px) {
+  .table-container {
+    margin: 0px 10px 10px 10px;
+    background: linear-gradient(
+      180deg,
+      #eff2ff -30.56%,
+      rgba(232, 236, 255, 0) 135.85%
+    );
+    border-radius: 6px;
+    padding: 10px 10px 0px 10px;
+  }
 }
 
 .filter-button {
@@ -41,7 +56,7 @@
   width: 424px;
   height: 40px;
 
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   border-radius: 38px;
 }
 
@@ -78,16 +93,16 @@
 }
 
 .input-text {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
-  line-height: 20px;  
-  
-  color: #06163A;
+  line-height: 20px;
+
+  color: #06163a;
 }
 
-.modal-buttons{
+.modal-buttons {
   width: 82.76px;
   height: 37.02px;
   background-color: #ffffff;
@@ -99,7 +114,7 @@
 }
 
 .even-row {
-  background-color: #EAEAEA
+  background-color: #eaeaea;
 }
 
 .odd-row {

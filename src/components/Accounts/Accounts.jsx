@@ -68,7 +68,7 @@ const Accounts = () => {
 
   return (
     <div className="table-container">
-      <div className="flex justify-between items-center mb-5">
+      <div className="flex justify-between items-center mb-5 ">
         <div className="flex">
           <Search
             placeholder="Search objects..."
@@ -94,11 +94,11 @@ const Accounts = () => {
           </Button>
         </div>
         <Button
-          className="add-account-button"
+          className="add-account-button flex justify-center"
           onClick={() => setIsAddModalOpen(true)}
         >
           <PlusOutlined className="custom-icon" />
-          <span>Yeni Hesap Ekle</span>
+          <p className="hidden sm:flex">Yeni Hesap Ekle</p>
         </Button>
         <AddAccount
           isAddModalOpen={isAddModalOpen}
@@ -106,7 +106,14 @@ const Accounts = () => {
           onAccountAdded={onAccountAdded} // Bu satırı ekleyin
         />
       </div>
-      <Table columns={columns} dataSource={data} onChange={onChange} rowClassName={(record, index) => (index % 2 === 0 ? "even-row" : "odd-row")}/>
+      <Table
+        columns={columns}
+        dataSource={data}
+        onChange={onChange}
+        rowClassName={(record, index) =>
+          index % 2 === 0 ? "even-row" : "odd-row"
+        }
+      />
     </div>
   );
 };

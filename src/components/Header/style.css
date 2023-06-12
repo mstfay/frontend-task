@@ -1,6 +1,26 @@
-.header-container {
-  margin: 0 auto;
-  padding: 0 50px;
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .social-buttons {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #744bfc;
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+  }
+}
+
+.logo-container {
+  min-width: 165px; /* Logo genişliğini istediğiniz sabit değeri buraya girin */
+  min-height: 60px; /* Yüksekliği otomatik olarak ayarlamak için */
 }
 
 .header-container .hover-underline::after {
@@ -30,4 +50,35 @@
 .social-buttons > button .anticon {
   color: white;
   font-size: 14px;
+}
+
+.canvas-menu > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #744bfc;
+  color: white;
+  border-radius: 3px;
+}
+
+.text-drawer {
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.text-drawer > li {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 14px;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  margin-left: 15px;
+  border-top: 1px solid #000000; /* Border üstünü çizer */
+}
+
+.text-drawer > li:last-child {
+  border-bottom: 1px solid #000000; /* Border üstünü çizer */
 }
