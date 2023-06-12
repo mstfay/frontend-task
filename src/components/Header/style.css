@@ -23,15 +23,24 @@
   min-height: 60px; /* Yüksekliği otomatik olarak ayarlamak için */
 }
 
-.header-container .hover-underline::after {
-  content: "";
-  width: 0;
-  height: 2px;
-  background: #744bfc;
-  transition: width 0.3s;
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
 }
 
-.header-container .hover-underline:hover::after {
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #333;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover::after {
   width: 100%;
 }
 

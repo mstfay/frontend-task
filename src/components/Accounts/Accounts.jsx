@@ -37,6 +37,18 @@ const columns = [
 const Accounts = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [data, setData] = useState([...initialData]); // initialData with spread operator
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.link.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   useEffect(() => {
     // Load stored accounts from localStorage, or use an empty array if none are found
@@ -55,7 +67,7 @@ const Accounts = () => {
     const key = `${data.length + 1}`;
     const newAccountWithKey = { ...newAccount, key };
 
-  // Update the data with the new account included
+    // Update the data with the new account included
     const updatedData = [...data, newAccountWithKey];
 
     setData(updatedData);
@@ -73,10 +85,12 @@ const Accounts = () => {
       No modifications have been made to the other parts, assuming they are not relevant to the task. */}
       <div className="flex justify-between items-center mb-5 ">
         <div className="flex">
-          <Search
+          <Input.Search
             placeholder="Search objects..."
             size="large"
             className="custom-search"
+            value={searchTerm}
+            onChange={handleSearch}
             enterButton={
               <Button
                 style={{
@@ -96,13 +110,16 @@ const Accounts = () => {
             <FilterFilled style={{ color: "#744bfc", fontSize: "16px" }} />
           </Button>
         </div>
-        <Button
-          className="add-account-button flex justify-center"
-          onClick={() => setIsAddModalOpen(true)}
-        >
-          <PlusOutlined className="custom-icon" />
-          <p className="hidden sm:flex">Yeni Hesap Ekle</p>
-        </Button>
+        <div>
+          <Button
+            className="add-account-button flex justify-center"
+            onClick={() => setIsAddModalOpen(true)}
+          >
+            <PlusOutlined className="custom-icon" />
+            <p className="hidden sm:flex">Yeni Hesap Ekle</p>
+          </Button>
+        </div>
+
         {/* In this section, we opened a modal with AddAccount to add a social media account. */}
         <AddAccount
           isAddModalOpen={isAddModalOpen}
@@ -114,7 +131,7 @@ const Accounts = () => {
       the background color of the table as a gradient, I gave different colors for even and odd rows. */}
       <Table
         columns={columns}
-        dataSource={data}
+        dataSource={filteredData}
         rowClassName={(record, index) =>
           index % 2 === 0 ? "even-row" : "odd-row"
         }

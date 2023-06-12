@@ -43,7 +43,7 @@
 .add-account-button {
   height: 42px;
   color: #ffffff;
-  width: 175px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;

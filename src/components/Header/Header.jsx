@@ -38,22 +38,22 @@ const Header = () => {
           {/* We provided a width of mx-6 to li elements on the x-axis. We added a hover-underline animation to Link elements. */}
           <ul className="flex justify-center nav-links">
             <li className="mx-6">
-              <Link to="/" className="hover-underline">
+              <Link to="/">
                 Hakkımızda
               </Link>
             </li>
             <li className="mx-6">
-              <Link to="/" className="hover-underline">
+              <Link to="/">
                 Jüri - Yarışma Yazılımı
               </Link>
             </li>
             <li className="mx-6">
-              <Link to="/" className="hover-underline">
+              <Link to="/">
                 Word Ninja
               </Link>
             </li>
             <li className="mx-6">
-              <Link to="/" className="hover-underline">
+              <Link to="/">
                 Word Pyramids
               </Link>
             </li>
