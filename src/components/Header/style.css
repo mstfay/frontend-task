@@ -1,0 +1,33 @@
+.header-container {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.header-container .hover-underline::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #744bfc;
+  transition: width 0.3s;
+}
+
+.header-container .hover-underline:hover::after {
+  width: 100%;
+}
+
+.social-buttons > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: #744bfc;
+  border-radius: 1.93846px;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.social-buttons > button .anticon {
+  color: white;
+  font-size: 14px;
+}
