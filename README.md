@@ -20,7 +20,8 @@ Proje dosyalarını indirerek, kolayca incelemek için `npm start` komutunu kull
 
 ## Geliştirme
 
-Proje için search ve filter kısmının çalışması gerekliliği ile ilgili ikileme düştüm ve şuan için eklemedim. 
-Önceliğimin projeyi paylaşmak olduğunu düşünerek bu şekilde tamamladım ancak o kısımları da çalışır hale getireceğim.
+Proje için filter kısmı henüz aktif değil.
+
+Önceliğimin projeyi paylaşmak olduğunu düşünerek bu şekilde tamamladım ancak o filter da çalışır hale getireceğim.
 
 ---
