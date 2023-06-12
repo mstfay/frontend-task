@@ -91,3 +91,20 @@
 .text-drawer > li:last-child {
   border-bottom: 1px solid #000000; /* Border üstünü çizer */
 }
+
+.drawer-icons > button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: #744bfc;
+  color: white;
+  border-radius: 3px;
+  margin: 15px 3px 0px 0px;
+}
+
+.drawer-icons > button .anticon {
+  color: white;
+  font-size: 26px;
+}
