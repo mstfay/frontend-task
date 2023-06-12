@@ -34,15 +34,12 @@ const columns = [
   },
 ];
 
-const onChange = (pagination, filters, sorter, extra) => {
-  console.log("params", pagination, filters, sorter, extra);
-};
-
 const Accounts = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [data, setData] = useState([...initialData]); // initialData with spread operator
 
   useEffect(() => {
+    // Load stored accounts from localStorage, or use an empty array if none are found
     const storedAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
 
     // If there are stored accounts, use them along with the initialData
@@ -54,20 +51,26 @@ const Accounts = () => {
   }, []);
 
   const onAccountAdded = (newAccount) => {
+    // Generate a unique key for the new account
     const key = `${data.length + 1}`;
     const newAccountWithKey = { ...newAccount, key };
 
+  // Update the data with the new account included
     const updatedData = [...data, newAccountWithKey];
 
     setData(updatedData);
+
+    // Store the updatedData in localStorage, excluding the initialData
     localStorage.setItem(
       "accounts",
       JSON.stringify(updatedData.filter((item) => !initialData.includes(item)))
-    ); // filter out initialData
+    );
   };
 
   return (
     <div className="table-container">
+      {/* This div contains search box, filter button, and addAccount elements.
+      No modifications have been made to the other parts, assuming they are not relevant to the task. */}
       <div className="flex justify-between items-center mb-5 ">
         <div className="flex">
           <Search
@@ -100,16 +103,18 @@ const Accounts = () => {
           <PlusOutlined className="custom-icon" />
           <p className="hidden sm:flex">Yeni Hesap Ekle</p>
         </Button>
+        {/* In this section, we opened a modal with AddAccount to add a social media account. */}
         <AddAccount
           isAddModalOpen={isAddModalOpen}
           setIsAddModalOpen={setIsAddModalOpen}
           onAccountAdded={onAccountAdded} // Bu satırı ekleyin
         />
       </div>
+      {/* Here, we transferred our data information to a table. Since I couldn't set 
+      the background color of the table as a gradient, I gave different colors for even and odd rows. */}
       <Table
         columns={columns}
         dataSource={data}
-        onChange={onChange}
         rowClassName={(record, index) =>
           index % 2 === 0 ? "even-row" : "odd-row"
         }

@@ -14,10 +14,12 @@ import "./style.css";
 const Header = () => {
   const [visible, setVisible] = useState(false);
 
+  // Function to show the drawer
   const showDrawer = () => {
     setVisible(true);
   };
 
+  // Function to close the drawer
   const onClose = () => {
     setVisible(false);
   };
@@ -25,12 +27,15 @@ const Header = () => {
   return (
     <div className="md:px-12 xs: px-6">
       <div className="py-4 lg:px-10 flex justify-between items-center">
+        {/* This div contains the logo. */}
         <div className="logo-container">
           <Link to="/">
             <img src="/images/rast-mobile-logo.PNG" alt="logo" />
           </Link>
         </div>
+        {/* This div contains links for internal site navigation. */}
         <div className="flex-grow md:text-sm lg:text-lg flex justify-center">
+          {/* We provided a width of mx-6 to li elements on the x-axis. We added a hover-underline animation to Link elements. */}
           <ul className="flex justify-center nav-links">
             <li className="mx-6">
               <Link to="/" className="hover-underline">
@@ -54,6 +59,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
+        {/* This div contains social media icons and drawer for responsive */}
         <div className="flex">
           <div className="md:flex social-buttons xs:hidden">
             <Button>
@@ -69,6 +75,7 @@ const Header = () => {
               <LinkedinFilled />
             </Button>
           </div>
+          {/* Here, we created a left-side sliding drawer and added link elements for mobile */}
           <div className="menu-icon md:hidden canvas-menu">
             <Button type="primary" onClick={showDrawer}>
               <MenuOutlined />
@@ -85,29 +92,21 @@ const Header = () => {
                   <img src="/images/rast-mobile-logo.PNG" alt="logo" />
                 </Link>
                 <Button className="mt-2 border-0" onClick={onClose}>
-                  <CloseOutlined className="flex justify-center align-middle"/>
+                  <CloseOutlined className="flex justify-center align-middle" />
                 </Button>
               </div>
               <ul className="text-drawer">
                 <li>
-                  <Link to="/">
-                    Hakkımızda
-                  </Link>
+                  <Link to="/">Hakkımızda</Link>
                 </li>
                 <li>
-                  <Link to="/">
-                    Jüri - Yarışma Yazılımı
-                  </Link>
+                  <Link to="/">Jüri - Yarışma Yazılımı</Link>
                 </li>
                 <li>
-                  <Link to="/" className="flex justify-center align-middle">
-                    Word Ninja
-                  </Link>
+                  <Link to="/">Word Ninja</Link>
                 </li>
                 <li>
-                  <Link to="/">
-                    Word Pyramids
-                  </Link>
+                  <Link to="/">Word Pyramids</Link>
                 </li>
               </ul>
             </Drawer>

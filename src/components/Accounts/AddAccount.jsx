@@ -37,6 +37,7 @@ const AddAccount = ({ isAddModalOpen, setIsAddModalOpen, onAccountAdded }) => {
         >
           <Input className="custom-input" />
         </Form.Item>
+        {/* Here, we moved the button elements to the end of the div. CSS was used to adjust their color and size. */}
         <div className="flex justify-end mr-3.5">
           <Form.Item className="flex justify-end mb-35">
             <Button className="modal-buttons" htmlType="cancel">
